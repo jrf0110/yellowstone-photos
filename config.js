@@ -46,6 +46,7 @@ config.dev = {
  */
 config.production = {
   httpHost: 'j0.hn'
+, httpPort: 80
 };
  
 module.exports = {};
