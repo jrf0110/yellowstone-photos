@@ -6,7 +6,7 @@ var virtuals = {
     return [
       this.isHttps ? 'https://' : 'http://'
     , this.httpHost
-    , this.httpPort !== 80 ? (':' + this.httpPort) : ''
+    , this.httpPort !== 80 || this.env !== 'production' ? (':' + this.httpPort) : ''
     ].join('')
   }
 };
@@ -46,7 +46,6 @@ config.dev = {
  */
 config.production = {
   httpHost: 'j0.hn'
-, httpPort: 80
 };
  
 module.exports = {};
@@ -66,13 +65,13 @@ var changeEnvironment = function(env){
  
   for ( var key in _config ) module.exports[key] = _config[key];
 
+  module.exports.env = env;
+
   for ( var key in virtuals ){
     Object.defineProperty( module.exports, key, {
       get: virtuals[ key ]
     });
   }
- 
-  module.exports.env = env;
   
   // Re-export this function since it was overwritten in the environment switch
   module.exports.changeEnvironment = changeEnvironment;
