@@ -38,7 +38,7 @@ config.default = {
     ].join('')
   }
 , mediaDir: __dirname + '/public/media'
-, mediaPath: '/media'
+, mediaPath: 'media'
 , mediaExtensions: [
     'jpg', 'jpeg', 'png'
   , 'mov', 'mpg', 'mpeg'
