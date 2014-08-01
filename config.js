@@ -69,4 +69,4 @@ config.prod = {
 module.exports = {};
  
 // Set the initial environment
-changeEnvironment( process.env.NEW_APP_ENV || 'dev' );
+changeEnvironment( process.env.NODE_ENV || 'dev' );
