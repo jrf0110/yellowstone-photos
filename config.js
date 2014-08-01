@@ -45,7 +45,7 @@ config.dev = {
  * Production Configuration
  */
 config.production = {
-  httpHost: 'j0.hn'
+  httpHost: 'yellowstone.j0.hn'
 };
  
 module.exports = {};
