@@ -62,7 +62,7 @@ config.dev = {
 /**
  * Production Configuration
  */
-config.prod = {
+config.production = {
   httpHost: 'j0.hn'
 };
  
