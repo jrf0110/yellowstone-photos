@@ -6,7 +6,7 @@ var virtuals = {
     return [
       this.isHttps ? 'https://' : 'http://'
     , this.httpHost
-    , this.httpPort !== 80 || this.env !== 'production' ? (':' + this.httpPort) : ''
+    , this.httpPort !== 80 && this.env !== 'production' ? (':' + this.httpPort) : ''
     ].join('')
   }
 };
