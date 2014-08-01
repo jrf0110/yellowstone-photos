@@ -1,0 +1,21 @@
+{
+  "name": "yellowstone-photos",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jrf0110/yellowstone-photos",
+  "authors": [
+    "John Fawcett <jrf0110@gmail.com>"
+  ],
+  "description": "Yellowstone photos",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "GBKS/Wookmark-jQuery": "~1.4.8"
+  }
+}

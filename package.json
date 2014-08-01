@@ -1,0 +1,24 @@
+{
+  "name": "yellowstone-photos",
+  "version": "0.1.0",
+  "description": "Photos from my yellowstone trip",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrf0110/yellowstone-photos.git"
+  },
+  "author": "John Fawcett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrf0110/yellowstone-photos/issues"
+  },
+  "homepage": "https://github.com/jrf0110/yellowstone-photos",
+  "dependencies": {
+    "express": "^4.7.2",
+    "lodash": "^2.4.1",
+    "nunjucks": "^1.0.5"
+  }
+}

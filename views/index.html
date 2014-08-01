@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      #gallery-container {
+        position: relative;
+      }
+
+      img, video {
+        width: 100%;
+      }
+
+      .media {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .media > li {
+        position: relative;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+      }
+
+      .play-symbol {
+        position: relative;
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+        background: rgba( 0,0,0, 0.7 );
+        cursor: pointer;
+      }
+
+      .play-symbol:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -28px;
+        margin-left: -18px;
+        width: 0;
+        height: 0;
+        border-top: 30px solid rgba(0, 0, 0, 0);
+        border-bottom: 30px solid rgba(0, 0, 0, 0);
+        border-left: 50px solid rgba( 255, 255, 255, 0.3 );
+      }
+
+      .media > li .play-symbol {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -50px;
+        margin-left: -50px;
+      }
+    </style>
+
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/GBKS/Wookmark-jQuery/jquery.wookmark.js"></script>
+
+    <script>
+      $(function(){
+        $('.media > li').wookmark({
+          autoResize: true
+        , container: $('#gallery-container')
+        , itemWidth: 380
+        , flexibleWidth: 10
+        , offset: 20
+        , resizeDelay: 50
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="gallery-container">
+      <ul class="media">
+        {% for item in media %}
+          <li>
+            {% if item.href | extension == 'mov' %}
+              <div class="play-symbol"></div>
+              <a target="_blank" href="{{ item.href }}">
+                <video src="{{ item.href }}"></video>
+              </a>
+            {% else %}
+              <a target="_blank" href="{{ item.href }}">
+                <img src="{{ item.href }}" alt="">
+              </a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
